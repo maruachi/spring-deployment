@@ -26,7 +26,7 @@ spring:
     url: jdbc:mysql://101.101.209.147:3306/test?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: org.mariadb.jdbc.Driver
     username: goodpass
-    password: rntvotm1!
+    password: Rntvotm1!
 server:
   port: 8081
 ---
