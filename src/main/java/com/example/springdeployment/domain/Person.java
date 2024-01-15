@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 @Builder
 @Getter
 @ToString
-public class User {
+public class Person {
     private Integer id;
     private String userName;
     private String email;
     private LocalDateTime datetime;
 
-    public User(Integer id, String userName, String email, LocalDateTime datetime) {
+    public Person(Integer id, String userName, String email, LocalDateTime datetime) {
         this.id = id;
         this.userName = userName;
         this.email = email;

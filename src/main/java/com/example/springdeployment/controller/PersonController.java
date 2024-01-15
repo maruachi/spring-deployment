@@ -1,7 +1,7 @@
 package com.example.springdeployment.controller;
 
-import com.example.springdeployment.domain.User;
-import com.example.springdeployment.domain.UserRepository;
+import com.example.springdeployment.domain.Person;
+import com.example.springdeployment.domain.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,17 +11,17 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-public class UserController {
-    private final UserRepository userRepository;
+public class PersonController {
+    private final PersonRepository personRepository;
 
     @GetMapping("/user")
     @ResponseBody
     public String searchUser() {
-        List<User> users = userRepository.findAll();
+        List<Person> people = personRepository.findAll();
 
         StringBuilder stringBuilder = new StringBuilder();
-        for (User user : users) {
-            String string = user.toString();
+        for (Person person : people) {
+            String string = person.toString();
             stringBuilder.append(string).append("<br>");
         }
         return stringBuilder.toString();

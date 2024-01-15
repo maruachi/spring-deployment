@@ -1,11 +1,4 @@
 spring:
-  profiles:
-    group:
-      "prod": "prod, common"
-      "dev": "dev, common"
----
-
-spring:
   config:
     activate:
       on-profile: prod
@@ -21,20 +14,18 @@ server:
 spring:
   config:
     activate:
-      on-profile: dev
+      on-profile: test
   datasource:
-    url: jdbc:mysql://101.101.209.147:3306/test?allowPublicKeyRetrieval=true&useSSL=false
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: ${MYSQL_DEV_USERNAME}
-    password: ${MYSQL_DEV_PASSWORD}
-server:
-  port: 8081
----
-
-spring:
-  config:
-    activate:
-      on-profile: "common"
+    url: jdbc:h2:mem:testDB
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
   sql:
     init:
       mode: always
+server:
+  port: 8080
+---

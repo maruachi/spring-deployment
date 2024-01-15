@@ -8,10 +8,10 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.List;
 
 @SpringBootTest
-@ActiveProfiles("dev")
-class UserRepositoryTest {
+@ActiveProfiles("test")
+class PersonH2RepositoryTest {
     @Autowired
-    private UserRepository userRepository;
+    private PersonRepository personRepository;
 
     @Test
     void test1() {
@@ -20,12 +20,12 @@ class UserRepositoryTest {
 
     @Test
     void test2() {
-        System.out.println(userRepository);
-        List<User> users = userRepository.findAll();
+        System.out.println(personRepository);
+        List<Person> people = personRepository.findAll();
 
         StringBuilder stringBuilder = new StringBuilder();
-        for (User user : users) {
-            String string = user.toString();
+        for (Person person : people) {
+            String string = person.toString();
             stringBuilder.append(string).append('\n');
         }
         System.out.println(stringBuilder);
