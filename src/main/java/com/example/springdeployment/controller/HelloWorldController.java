@@ -11,4 +11,10 @@ public class HelloWorldController {
     public String helloWorld() {
         return "hello world";
     }
+
+    @GetMapping("/new")
+    @ResponseBody
+    public String newHelloWorld() {
+        return "new hello world feature added";
+    }
 }
